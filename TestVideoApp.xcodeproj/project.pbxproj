@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B30E486B251F62B700460F5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E486A251F62B700460F5A /* AppDelegate.swift */; };
-		B30E486D251F62B700460F5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E486C251F62B700460F5A /* SceneDelegate.swift */; };
-		B30E486F251F62B700460F5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E486E251F62B700460F5A /* ViewController.swift */; };
-		B30E4872251F62B800460F5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30E4870251F62B800460F5A /* Main.storyboard */; };
-		B30E4874251F62BA00460F5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30E4873251F62BA00460F5A /* Assets.xcassets */; };
-		B30E4877251F62BA00460F5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30E4875251F62BA00460F5A /* LaunchScreen.storyboard */; };
 		B30E4882251F62BB00460F5A /* TestVideoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E4881251F62BB00460F5A /* TestVideoAppTests.swift */; };
 		B30E488D251F62BB00460F5A /* TestVideoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E488C251F62BB00460F5A /* TestVideoAppUITests.swift */; };
+		B30E48ED251F647900460F5A /* URLsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E48EB251F647900460F5A /* URLsEnum.swift */; };
+		B30E48F4251F649000460F5A /* VideoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E48F3251F649000460F5A /* VideoDataModel.swift */; };
+		B30E48FB251F649A00460F5A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E48F9251F649A00460F5A /* NetworkManager.swift */; };
+		B30E48FC251F649A00460F5A /* CacheVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E48FA251F649A00460F5A /* CacheVideoService.swift */; };
+		B30E4916251F650900460F5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E490A251F650900460F5A /* ViewController.swift */; };
+		B30E4917251F650900460F5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E490C251F650900460F5A /* AppDelegate.swift */; };
+		B30E4918251F650900460F5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E490D251F650900460F5A /* SceneDelegate.swift */; };
+		B30E4919251F650900460F5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30E490F251F650900460F5A /* LaunchScreen.storyboard */; };
+		B30E491A251F650900460F5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30E4911251F650900460F5A /* Main.storyboard */; };
+		B30E491B251F650900460F5A /* VideoLooperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E4914251F650900460F5A /* VideoLooperView.swift */; };
+		B30E491C251F650900460F5A /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E4915251F650900460F5A /* VideoPlayerView.swift */; };
+		B30E4925251F65E500460F5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30E4924251F65E500460F5A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +42,6 @@
 
 /* Begin PBXFileReference section */
 		B30E4867251F62B700460F5A /* TestVideoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestVideoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B30E486A251F62B700460F5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B30E486C251F62B700460F5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B30E486E251F62B700460F5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B30E4871251F62B800460F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B30E4873251F62BA00460F5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B30E4876251F62BA00460F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B30E4878251F62BA00460F5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B30E487D251F62BB00460F5A /* TestVideoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestVideoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30E4881251F62BB00460F5A /* TestVideoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVideoAppTests.swift; sourceTree = "<group>"; };
@@ -49,6 +49,18 @@
 		B30E4888251F62BB00460F5A /* TestVideoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestVideoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30E488C251F62BB00460F5A /* TestVideoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVideoAppUITests.swift; sourceTree = "<group>"; };
 		B30E488E251F62BB00460F5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B30E48EB251F647900460F5A /* URLsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLsEnum.swift; sourceTree = "<group>"; };
+		B30E48F3251F649000460F5A /* VideoDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDataModel.swift; sourceTree = "<group>"; };
+		B30E48F9251F649A00460F5A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B30E48FA251F649A00460F5A /* CacheVideoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheVideoService.swift; sourceTree = "<group>"; };
+		B30E490A251F650900460F5A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B30E490C251F650900460F5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B30E490D251F650900460F5A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B30E4910251F650900460F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B30E4912251F650900460F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B30E4914251F650900460F5A /* VideoLooperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoLooperView.swift; sourceTree = "<group>"; };
+		B30E4915251F650900460F5A /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		B30E4924251F65E500460F5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,15 @@
 		B30E4869251F62B700460F5A /* TestVideoApp */ = {
 			isa = PBXGroup;
 			children = (
-				B30E486A251F62B700460F5A /* AppDelegate.swift */,
-				B30E486C251F62B700460F5A /* SceneDelegate.swift */,
-				B30E486E251F62B700460F5A /* ViewController.swift */,
-				B30E4870251F62B800460F5A /* Main.storyboard */,
-				B30E4873251F62BA00460F5A /* Assets.xcassets */,
-				B30E4875251F62BA00460F5A /* LaunchScreen.storyboard */,
+				B30E4923251F65E500460F5A /* Source */,
+				B30E490E251F650900460F5A /* Storyboards */,
+				B30E490B251F650900460F5A /* SupportingFiles */,
+				B30E4913251F650900460F5A /* VideoView */,
+				B30E4909251F650900460F5A /* ViewControllers */,
+				B30E48F8251F649A00460F5A /* Services */,
+				B30E48F2251F649000460F5A /* Models */,
 				B30E4878251F62BA00460F5A /* Info.plist */,
+				B30E48EA251F647900460F5A /* Entities */,
 			);
 			path = TestVideoApp;
 			sourceTree = "<group>";
@@ -126,6 +140,74 @@
 				B30E488E251F62BB00460F5A /* Info.plist */,
 			);
 			path = TestVideoAppUITests;
+			sourceTree = "<group>";
+		};
+		B30E48EA251F647900460F5A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B30E48EB251F647900460F5A /* URLsEnum.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B30E48F2251F649000460F5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B30E48F3251F649000460F5A /* VideoDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B30E48F8251F649A00460F5A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B30E48F9251F649A00460F5A /* NetworkManager.swift */,
+				B30E48FA251F649A00460F5A /* CacheVideoService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B30E4909251F650900460F5A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B30E490A251F650900460F5A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B30E490B251F650900460F5A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B30E490C251F650900460F5A /* AppDelegate.swift */,
+				B30E490D251F650900460F5A /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B30E490E251F650900460F5A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B30E490F251F650900460F5A /* LaunchScreen.storyboard */,
+				B30E4911251F650900460F5A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B30E4913251F650900460F5A /* VideoView */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4914251F650900460F5A /* VideoLooperView.swift */,
+				B30E4915251F650900460F5A /* VideoPlayerView.swift */,
+			);
+			path = VideoView;
+			sourceTree = "<group>";
+		};
+		B30E4923251F65E500460F5A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B30E4924251F65E500460F5A /* Assets.xcassets */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +277,7 @@
 				TargetAttributes = {
 					B30E4866251F62B700460F5A = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 					B30E487C251F62BB00460F5A = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -231,9 +314,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30E4877251F62BA00460F5A /* LaunchScreen.storyboard in Resources */,
-				B30E4874251F62BA00460F5A /* Assets.xcassets in Resources */,
-				B30E4872251F62B800460F5A /* Main.storyboard in Resources */,
+				B30E4919251F650900460F5A /* LaunchScreen.storyboard in Resources */,
+				B30E4925251F65E500460F5A /* Assets.xcassets in Resources */,
+				B30E491A251F650900460F5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +341,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30E486F251F62B700460F5A /* ViewController.swift in Sources */,
-				B30E486B251F62B700460F5A /* AppDelegate.swift in Sources */,
-				B30E486D251F62B700460F5A /* SceneDelegate.swift in Sources */,
+				B30E4917251F650900460F5A /* AppDelegate.swift in Sources */,
+				B30E4918251F650900460F5A /* SceneDelegate.swift in Sources */,
+				B30E4916251F650900460F5A /* ViewController.swift in Sources */,
+				B30E491B251F650900460F5A /* VideoLooperView.swift in Sources */,
+				B30E48FB251F649A00460F5A /* NetworkManager.swift in Sources */,
+				B30E491C251F650900460F5A /* VideoPlayerView.swift in Sources */,
+				B30E48ED251F647900460F5A /* URLsEnum.swift in Sources */,
+				B30E48FC251F649A00460F5A /* CacheVideoService.swift in Sources */,
+				B30E48F4251F649000460F5A /* VideoDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,20 +385,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B30E4870251F62B800460F5A /* Main.storyboard */ = {
+		B30E490F251F650900460F5A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B30E4871251F62B800460F5A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B30E4875251F62BA00460F5A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B30E4876251F62BA00460F5A /* Base */,
+				B30E4910251F650900460F5A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B30E4911251F650900460F5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B30E4912251F650900460F5A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -436,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3DYTYX5S2;
 				INFOPLIST_FILE = TestVideoApp/Info.plist;
@@ -445,6 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = No.TestVideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3DYTYX5S2;
 				INFOPLIST_FILE = TestVideoApp/Info.plist;

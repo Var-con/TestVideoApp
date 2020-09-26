@@ -9,25 +9,67 @@ import XCTest
 @testable import TestVideoApp
 
 class TestVideoAppTests: XCTestCase {
-
+    
+    var sut: ViewController!
+    var sutNetworkManager: NetworkManager!
+    var sutCacheManager: CacheManager!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = ViewController()
+        sutNetworkManager = NetworkManager()
+        sutCacheManager = CacheManager()
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        sutNetworkManager = nil
+        sutCacheManager = nil
+        try super.tearDownWithError()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testFetchVideoData() {
+        let urlString = "https://mmvs.ru/GoBoards/test/playlist.json"
+        var videoUrls: [String]? = nil
+        sutNetworkManager.fetchVideoData(from: urlString) { (urlsOfVideosString) in
+            videoUrls?.append(contentsOf: urlsOfVideosString)
+            XCTAssertNotNil(videoUrls)
         }
     }
-
+    
+    func testFetchVideoDataFromWrongUrl() {
+        let urlString = "https://mmvs.ru/GoBoards/test/plaf"
+        var videoUrls: [String]? = nil
+        sutNetworkManager.fetchVideoData(from: urlString) { (urlsOfVideosString) in
+            videoUrls?.append(contentsOf: urlsOfVideosString)
+            XCTAssertNil(videoUrls)
+        }
+    }
+    
+    
+    func testCachingVideoWithRightUrl() {
+        let rightUrl = "https://office1.videoticket.ru:8123/media/1_42f3fc36feb29a62dca75ee03d7cf322.mp4"
+        sutCacheManager.getFileWith(stringUrl: rightUrl) { (resultUrl) in
+            switch resultUrl {
+            case .success(let url) :
+                XCTAssertNotNil(url)
+            case .failure(let error) :
+                print(error)
+            }
+        }
+    }
+    
+    
+    func testCachingVideoWithWrongUrl() {
+        let rightUrl = "https://office1.videoticket.ru:8123/media/1_42f3fc36feb29a62dca75"
+        sutCacheManager.getFileWith(stringUrl: rightUrl) { (resultUrl) in
+            switch resultUrl {
+            case .success(let url) :
+                print(url)
+            case .failure(let error) :
+                XCTAssertNotNil(error)
+            }
+        }
+    }
+    
 }
