@@ -8,28 +8,40 @@
 import Foundation
 
 class NetworkManager {
-    var urlsVideoList: [String] = []
     
-    func fetchVideoData(from url: String, compitionHandler: @escaping (_ exist: [String]) -> Void){
+    func fetchVideoData(from url: String, compitionHandler: @escaping (_ exist: Result<[String]>) -> Void){
         guard let url = URL(string: url) else { return }
-
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                guard let data = data else { return }
-                self.receveingVideoStrings(with: data)
-                compitionHandler(self.urlsVideoList)
-            }.resume()
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                compitionHandler(Result.failure(error as NSError))
+            } else {
+                if let data = data {
+                    self.receveingVideoStrings(with: data) { result in
+                        switch result {
+                        case .success(let massive) :
+                        compitionHandler(Result.success(massive))
+                        case .failure(let error) :
+                            compitionHandler(Result.failure(error))
+                        }
+                    }
+                }
+            }
+        }.resume()
     }
     
     
-    private func receveingVideoStrings(with data: Data) {
+    private func receveingVideoStrings(with data: Data, complitionHandler: @escaping (_ result: Result<[String]>) -> Void)  {
+        var urlsVideoList: [String] = []
         let decoder = JSONDecoder()
         do {
             let videosData = try decoder.decode(VideoDataModel.self, from: data)
             let videosUrls = videosData.data
-            self.urlsVideoList.append(contentsOf: videosUrls)
+            urlsVideoList.append(contentsOf: videosUrls)
+            complitionHandler(Result.success(urlsVideoList))
         }
         catch let error {
-            print(error)
+            complitionHandler(Result.failure(error as NSError))
         }
     }
 }

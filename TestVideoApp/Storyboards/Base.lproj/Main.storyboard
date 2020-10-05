@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L0D-K7-Fp3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestVideoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,12 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-Lt-Gwc">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait.. Videos are loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-Mj-ZrI">
-                                <rect key="frame" x="129.5" y="495" width="155" height="41"/>
+                                <rect key="frame" x="129.5" y="475" width="155" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="Llb-oD-Qgn"/>
                                 </constraints>
@@ -28,24 +25,68 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qnU-PR-tnn">
+                                <rect key="frame" x="188.5" y="430" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3fW-Lt-Gwc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Grd-S7-sNz"/>
-                            <constraint firstItem="3fW-Lt-Gwc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OcI-l1-YYa"/>
                             <constraint firstItem="qzc-Mj-ZrI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ol2-8A-mcH"/>
-                            <constraint firstItem="qzc-Mj-ZrI" firstAttribute="top" secondItem="3fW-Lt-Gwc" secondAttribute="bottom" constant="37" id="wFT-4A-Mwq"/>
+                            <constraint firstItem="qnU-PR-tnn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P0S-9e-LBn"/>
+                            <constraint firstItem="qzc-Mj-ZrI" firstAttribute="top" secondItem="qnU-PR-tnn" secondAttribute="bottom" constant="8" id="XUM-E2-FMQ"/>
+                            <constraint firstItem="qnU-PR-tnn" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="20" id="jCA-u2-nzl"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="zfU-nh-Vqi"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="3fW-Lt-Gwc" id="KaU-MW-yET"/>
+                        <outlet property="activityIndicator" destination="qnU-PR-tnn" id="7vA-w4-IzE"/>
                         <outlet property="waitingLabel" destination="qzc-Mj-ZrI" id="6AW-3o-RU4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="713.04347826086962" y="77.678571428571431"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ci5-WX-AVe">
+            <objects>
+                <viewController id="btd-p0-Bki" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xJF-FQ-TTs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sXm-Oq-5UJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Hx3-9Y-iCw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akS-pQ-3xc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="823"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="V9P-Mg-yCk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="L0D-K7-Fp3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pmX-vu-HGf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tat-rS-8PU"/>
+                        <segue destination="btd-p0-Bki" kind="relationship" relationship="viewControllers" id="Uqv-gS-Z9H"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFf-ri-NGF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="77.678571428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

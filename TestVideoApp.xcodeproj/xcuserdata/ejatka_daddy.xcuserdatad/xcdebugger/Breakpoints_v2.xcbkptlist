@@ -3,4 +3,70 @@
    uuid = "76300D98-B26D-48C0-B8A4-9C8C343694EA"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85041511-38A3-4104-9371-089FC507BDB3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestVideoApp/Services/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "fetchVideoData(from:compitionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A3FDF4A-1875-4644-819A-0EE0B98E3256"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestVideoApp/Services/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchVideoData(from:compitionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A3FDF4A-1875-4644-819A-0EE0B98E3256 - c4a4d7051bf143f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestVideoApp.NetworkManager.fetchVideoData(from: Swift.String, compitionHandler: (TestVideoApp.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestVideoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ejatka_daddy/Documents/Competition/TestVideoApp/TestVideoApp/Services/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "759">
+               </Location>
+               <Location
+                  uuid = "8A3FDF4A-1875-4644-819A-0EE0B98E3256 - a5fd3ed82d2f2be2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TestVideoApp.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestVideoApp.NetworkManager.fetchVideoData(from: Swift.String, compitionHandler: (TestVideoApp.Result&lt;Swift.Array&lt;Swift.String&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestVideoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ejatka_daddy/Documents/Competition/TestVideoApp/TestVideoApp/Services/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "159">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

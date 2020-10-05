@@ -12,18 +12,27 @@ class ViewController: UIViewController {
     private let networkManager = NetworkManager()
     private let cacheManager = CacheManager()
     private var videosUrls: [URL] = []
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var waitingLabel: UILabel!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         fetchUrlsOfVideos()
     }
     
     private func fetchUrlsOfVideos() {
-        networkManager.fetchVideoData(from: URLlist.forThisApp.rawValue) { massive in
-            self.cachingVideo(with: massive)
+        networkManager.fetchVideoData(from: URLlist.forThisApp.rawValue) { [weak self] result in
+            switch result {
+            case .failure(let error ) :
+                DispatchQueue.main.async {
+                    self!.stopIndication()
+                    self!.showAlert(error)
+                }
+            case .success(let urls) :
+                self!.cachingVideo(with: urls)
+            }
         }
     }
     
@@ -34,13 +43,20 @@ class ViewController: UIViewController {
                 case .success(let url) :
                     self.videosUrls.append(url)
                 case .failure(let error) :
-                    print(error.localizedDescription)
+                    self.showAlert(error)
                 }
             }
         }
-        DispatchQueue.main.async {
-            self.endDownloading()
-            self.setupVideoPlayer()
+        DispatchQueue.main.async { [self] in
+            stopIndication()
+            setupVideoPlayer()
+        }
+    }
+    
+    func stopIndication() {
+        DispatchQueue.main.async { [self] in
+            activityIndicator.stopAnimating()
+            waitingLabel.isHidden = true
         }
     }
     
@@ -49,16 +65,23 @@ class ViewController: UIViewController {
         view.addSubview(videoLooper)
         videoLooper.backgroundColor = .black
         videoLooper.translatesAutoresizingMaskIntoConstraints = false
-        videoLooper.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        videoLooper.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        videoLooper.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        videoLooper.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        videoLooper.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 1).isActive = true
+        videoLooper.bottomAnchor.constraint(equalToSystemSpacingBelow: view.bottomAnchor, multiplier: 1).isActive = true
+        videoLooper.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
+        videoLooper.trailingAnchor.constraint(equalToSystemSpacingAfter: view.trailingAnchor, multiplier: 1).isActive = true
+        
         videoLooper.play()
-    }
-    
-    private func endDownloading() {
-        activityIndicator.stopAnimating()
-        waitingLabel.isHidden = true
+        
     }
 }
 
+extension ViewController {
+    private func showAlert(_ error: Error) {
+        let alert = UIAlertController(title: "Download error!",
+                                      message: "Error in the network service. \(error.localizedDescription)",
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
